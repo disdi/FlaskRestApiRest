@@ -1,0 +1,11 @@
+language: python
+
+python: 
+  - "2.7"
+  
+env:
+  - FLASK=1.0
+
+install:
+  - pip install flask==$FLASK
+
