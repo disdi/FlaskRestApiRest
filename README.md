@@ -1,4 +1,7 @@
 # FlaskRestApiRest
+
+[![Build Status](https://travis-ci.org/Tony133/FlaskRestApiRest.svg?branch=master)](https://travis-ci.org/Tony133/FlaskRestApiRest)
+
 Simple Example Api Rest with Flask
 
 ## Import db object and generate SQLite database
