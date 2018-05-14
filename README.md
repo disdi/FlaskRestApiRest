@@ -15,7 +15,12 @@ Simple Example Api Rest with Flask
 ## Run App
 
 ```
-   $ python book.py or flask run 
+   $ python book.py 
+    
+    or
+   
+   $ export FLASK_APP=book.py
+   $ flask run 
 ```
 
 ## Getting with Curl
