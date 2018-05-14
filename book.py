@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from models import db, Book
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
@@ -10,10 +9,19 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'book.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db.init_app(app)
-db.create_all()
-
+db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
+class Book(db.Model):
+    __tablename__ = 'books'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80))
+    price = db.Column(db.String(50))
+
+    def __init__(self, title, price):
+        self.title = title
+        self.price = price
 
 class BookSchema(ma.Schema):
     class Meta:
